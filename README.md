@@ -1,8 +1,10 @@
-### distributed-process
+### distributed-process-monad-control
+
+Orphan instances for MonadBase and MonadBaseControl.
 
 This repository is part of Cloud Haskell.
 
-See http://haskell-distributed.github.com for documentation, user guides,
+See http://haskell-distributed.github.io for documentation, user guides,
 tutorials and assistance.
 
 ### Getting Help / Raising Issues
@@ -16,4 +18,4 @@ mailing list in the first instance - parallel-haskell@googlegroups.com.
 
 ### License
 
-distributed-process is made available under a BSD-3 license.
+distributed-process-monad-control is made available under a BSD-3 license.
