@@ -1,0 +1,16 @@
+dist
+cabal-dev
+*.o
+*.hi
+*.chi
+*.chs.h
+*.sublime-*
+*.sublime-*
+*.lksh?
+.dist-buildwrapper
+.project
+.hpc
+*.tix
+.cabal-sandbox
+build/
+cabal.sandbox.config
