@@ -5,7 +5,7 @@ name:                distributed-process-monad-control
 version:             0.4.2
 synopsis:            Orphan instances for MonadBase and MonadBaseControl.
 -- description:         
-homepage:            http://http://haskell-distributed.github.io
+homepage:            http://haskell-distributed.github.io
 license:             BSD3
 license-file:        LICENSE
 author:              Jeremy Huffman
@@ -19,7 +19,7 @@ cabal-version:       >=1.10
 library
   exposed-modules:    Control.Distributed.Process.MonadBaseControl
   -- other-modules:       
-  build-depends:      base >= 4.4 
+  build-depends:      base >= 4.4 && <= 0.5
                     , distributed-process == 0.4.2
                     , monad-control >= 0.3 && <= 0.4
                     , transformers
