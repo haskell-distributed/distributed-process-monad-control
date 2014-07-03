@@ -5,7 +5,17 @@
 
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 -- | This module only exports instances for 'MonadBase' 'IO' and
--- 'MonadBaseControl' 'IO' for the 'Process' monad.
+-- 'MonadBaseControl' 'IO' for the 'Process' monad. This is for use
+-- in conjunction with a library requiring these instances, such as the
+-- <http://hackage.haskell.org/package/lifted-base lifted-base> package.
+--
+-- example usage:
+--
+-- >import Control.Distributed.Process.MonadBaseControl()
+-- >import Control.Concurrent.MVar.Lifted (withMVar)
+--
+-- >processWithMVar :: MVar a -> (a -> Process b) -> Process b
+-- >processWithMvar = withMVar
 module Control.Distributed.Process.MonadBaseControl
   (
   ) where
