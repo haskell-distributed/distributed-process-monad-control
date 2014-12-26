@@ -2,6 +2,11 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE StandaloneDeriving #-}
 {-# LANGUAGE TypeFamilies #-}
+{-# LANGUAGE CPP #-}
+
+#if MIN_VERSION_monad_control(1,0,0)
+{-# LANGUAGE UndecidableInstances #-}
+#endif
 
 {-# OPTIONS_GHC -fno-warn-orphans #-}
 -- | This module only exports instances for 'MonadBase' 'IO' and
@@ -32,7 +37,15 @@ import Control.Monad.Trans.Reader (ReaderT)
 
 deriving instance MonadBase IO Process
 
+
+#if MIN_VERSION_monad_control(1,0,0)
+instance MonadBaseControl IO Process where
+  type StM Process a = StM (ReaderT LocalProcess IO) a
+  liftBaseWith f = Process $ liftBaseWith $ \ rib -> f (rib . unProcess)
+  restoreM = Process . restoreM
+#else
 instance MonadBaseControl IO Process where
   newtype StM Process a = StProcess {_unSTProcess :: StM (ReaderT LocalProcess IO) a}
   restoreM (StProcess m) = Process $ restoreM m
   liftBaseWith f = Process $ liftBaseWith $ \ rib -> f (fmap StProcess . rib . unProcess)
+#endif

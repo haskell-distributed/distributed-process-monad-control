@@ -2,7 +2,7 @@
 --   For further documentation, see http://haskell.org/cabal/users-guide/
 
 name:                distributed-process-monad-control
-version:             0.5.0
+version:             0.5.1
 synopsis:            Orphan instances for MonadBase and MonadBaseControl.
 homepage:            http://haskell-distributed.github.io
 license:             BSD3
@@ -33,7 +33,7 @@ library
   -- other-modules:       
   build-depends:      base >= 4.4 && <= 5
                     , distributed-process >= 0.4.2 && < 0.6.0
-                    , monad-control >= 0.3 && <= 0.4
+                    , monad-control >= 0.3 && < 1.1
                     , transformers
                     , transformers-base >= 0.4.1 && <= 0.5.0 
   hs-source-dirs:     src
