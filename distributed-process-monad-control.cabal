@@ -19,7 +19,10 @@ description:
   @'MonadBaseControl' @'IO' for the @'Process' monad. This is for use
   in conjunction with a library requiring these instances, such as the
   @<http://hackage.haskell.org/package/lifted-base lifted-base> package.
-  . 
+  .
+  A tutorial segment regarding use of this in distributed-process applications may
+  be found <http://haskell-distributed.github.io/tutorials/3ch.html#monad-transformer-stacks here>.
+  .
   example usage:
   . 
   >import Control.Distributed.Process.MonadBaseControl()
