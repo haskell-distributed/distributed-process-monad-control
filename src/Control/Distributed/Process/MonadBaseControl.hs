@@ -14,6 +14,12 @@
 -- in conjunction with a library requiring these instances, such as the
 -- <http://hackage.haskell.org/package/lifted-base lifted-base> package.
 --
+--
+-- Please excercise caution in usage of this instance, as it can
+-- enable use of functions such as 'forkIO' (or, 'fork' from lifted-base)
+-- which compromise invariants in the Process monad and can lead to confusing
+-- and subtle issues. Always use the Cloud Haskell functions such as `spawnLocal` instead.
+--
 -- example usage:
 --
 -- >import Control.Distributed.Process.MonadBaseControl()
