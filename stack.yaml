@@ -1,9 +1,5 @@
-flags: {}
-extra-package-dbs: []
+resolver: nightly-2016-03-06
 packages:
 - '.'
-extra-deps:
-- distributed-process-0.5.5.1
-- distributed-static-0.3.3.0
-- rank1dynamic-0.3.1.0
-resolver: lts-3.20
+
+extra-deps: []
