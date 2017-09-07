@@ -1,5 +1,7 @@
-resolver: nightly-2016-03-06
+resolver: lts-9.3
 packages:
 - '.'
 
-extra-deps: []
+extra-deps: [
+  distributed-process-0.7.3
+]
